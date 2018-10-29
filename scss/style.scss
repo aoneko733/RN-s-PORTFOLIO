@@ -10,7 +10,6 @@ reset
 body {
   font-family: 'ヒラギノ角ゴシック Pro', Hiragino Kaku Gothic Pro, 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
   font-size: 14px;
-  margin: 0 auto;
   overflow: hidden;
   &::before {
     background: url(../img/bg.jpg) center/cover no-repeat;
@@ -42,7 +41,7 @@ a {
 }
 /*header*/
 header {
-  background-color: rgba(0,0,0,0.7);
+  background: linear-gradient(rgba(85,85,85,0.8) 0%, rgba(51,51,51,0.8) 100%);
   min-height: 50px;
   position: fixed;
   top: 0;
@@ -60,7 +59,7 @@ header {
   span {
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 1px 1px 1px #555;
+    box-shadow: 2px 2px 2px #333;
     display: inline-block;
     height: 4px;
     position: absolute;
@@ -71,7 +70,7 @@ header {
       top: 0;
     }
     &:nth-of-type(2) {
-      top: 12px;
+      top: 13px;
     }
     &:nth-of-type(3) {
       bottom: 0;
@@ -80,6 +79,8 @@ header {
   &.active {
     span {
       background-color: #f00;
+      box-shadow: none;
+      height: 5px;
       &:nth-of-type(1) {
         transform: translateY(13px) rotate(-45deg);
       }
@@ -103,7 +104,7 @@ header {
         size: 24px;
         weight: bold;
       }
-      padding: 10px;
+      padding: 8px 10px;
       text-shadow: 1px 1px 1px #000;
       & > a {
         color: #fff;
@@ -147,8 +148,6 @@ content
   position: fixed;
 }
 .content-body {
-  margin: 0 auto;
-  width: 100%;
   padding: 20px 10px;
   h2 {
     font: {
@@ -198,13 +197,11 @@ content
     text-align: center;
   }
   #profile {
-    width: 100%;
     &__img {
       text-align: center;
       img {
-        border: 10px solid #fff;
+        border: 12px solid #fff;
         height: 200px;
-        transform: rotateY(-3deg);
         width: 200px;
       }
     }
@@ -212,8 +209,10 @@ content
       font-size: 20px;
       margin-top: 20px;
       text-align: center;
-      p + p {
-        margin-top: 50px;
+      p {
+        & + p {
+         margin-top: 20px;
+        }
       }
     }
   }
@@ -221,13 +220,11 @@ content
 
 #content2 {
   #skill-list {
-    width: 100%;
     li {
       float: left;
       height: auto;
       margin-bottom: 10px;
       opacity: 0;
-      overflow: hidden;
       position: relative;
       text-align: center;
       transition: all .3s;
@@ -369,6 +366,7 @@ media queries
       left: 50%;
       max-width: 500px;
       transform: translateY(-50%) translateX(-50%);
+      width: 100%;
     }
   }
 }
@@ -408,11 +406,10 @@ media queries
   }
   /*navigation*/
   #navigation {
-    background: linear-gradient(#555 0%, #333 100%);
+    background: linear-gradient(rgba(85,85,85,0.8) 0%, rgba(51,51,51,0.8) 100%);
     display: block;
     height: 50px;
     margin-top: 0;
-    opacity: 0.8;
     padding-top: 10px;
     position: fixed;
     top: 0;
@@ -478,7 +475,6 @@ media queries
       width: 700px;
       &__img {
         float: left;
-        text-align: center;
         img {
           height: 250px;
           width: 250px;
@@ -486,7 +482,7 @@ media queries
       }
       &__detail {
         float: right;
-        margin: 0;
+        margin-top: 0;
         text-align: left;
         p {
           & + p {
