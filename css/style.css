@@ -12,7 +12,6 @@ reset
 body {
   font-family: 'ヒラギノ角ゴシック Pro', Hiragino Kaku Gothic Pro, 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
   font-size: 14px;
-  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -47,7 +46,8 @@ a {
 
 /*header*/
 header {
-  background-color: rgba(0, 0, 0, 0.7);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(85, 85, 85, 0.8)), to(rgba(51, 51, 51, 0.8)));
+  background: linear-gradient(rgba(85, 85, 85, 0.8) 0%, rgba(51, 51, 51, 0.8) 100%);
   min-height: 50px;
   position: fixed;
   top: 0;
@@ -69,8 +69,8 @@ header {
 #navi-btn span {
   background-color: #fff;
   border-radius: 4px;
-  -webkit-box-shadow: 1px 1px 1px #555;
-  box-shadow: 1px 1px 1px #555;
+  -webkit-box-shadow: 2px 2px 2px #333;
+  box-shadow: 2px 2px 2px #333;
   display: inline-block;
   height: 4px;
   position: absolute;
@@ -85,7 +85,7 @@ header {
 }
 
 #navi-btn span:nth-of-type(2) {
-  top: 12px;
+  top: 13px;
 }
 
 #navi-btn span:nth-of-type(3) {
@@ -94,6 +94,9 @@ header {
 
 #navi-btn.active span {
   background-color: #f00;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 5px;
 }
 
 #navi-btn.active span:nth-of-type(1) {
@@ -120,7 +123,7 @@ header {
 #navigation ul li {
   font-size: 24px;
   font-weight: bold;
-  padding: 10px;
+  padding: 8px 10px;
   text-shadow: 1px 1px 1px #000;
 }
 
@@ -173,8 +176,6 @@ content
 }
 
 .content-body {
-  margin: 0 auto;
-  width: 100%;
   padding: 20px 10px;
 }
 
@@ -229,19 +230,13 @@ content
   text-align: center;
 }
 
-#content1 #profile {
-  width: 100%;
-}
-
 #content1 #profile__img {
   text-align: center;
 }
 
 #content1 #profile__img img {
-  border: 10px solid #fff;
+  border: 12px solid #fff;
   height: 200px;
-  -webkit-transform: rotateY(-3deg);
-  transform: rotateY(-3deg);
   width: 200px;
 }
 
@@ -252,11 +247,7 @@ content
 }
 
 #content1 #profile__detail p + p {
-  margin-top: 50px;
-}
-
-#content2 #skill-list {
-  width: 100%;
+  margin-top: 20px;
 }
 
 #content2 #skill-list li {
@@ -264,7 +255,6 @@ content
   height: auto;
   margin-bottom: 10px;
   opacity: 0;
-  overflow: hidden;
   position: relative;
   text-align: center;
   -webkit-transition: all .3s;
@@ -432,6 +422,7 @@ media queries
     max-width: 500px;
     -webkit-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
+    width: 100%;
   }
 }
 
@@ -470,12 +461,11 @@ media queries
   }
   /*navigation*/
   #navigation {
-    background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#333));
-    background: linear-gradient(#555 0%, #333 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(85, 85, 85, 0.8)), to(rgba(51, 51, 51, 0.8)));
+    background: linear-gradient(rgba(85, 85, 85, 0.8) 0%, rgba(51, 51, 51, 0.8) 100%);
     display: block;
     height: 50px;
     margin-top: 0;
-    opacity: 0.8;
     padding-top: 10px;
     position: fixed;
     top: 0;
@@ -508,6 +498,7 @@ media queries
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
   .content-body {
+    margin: 0 auto;
     min-width: 900px;
     max-width: 1200px;
     padding: 20px;
@@ -543,7 +534,6 @@ media queries
   }
   #content1 #profile__img {
     float: left;
-    text-align: center;
   }
   #content1 #profile__img img {
     height: 250px;
@@ -551,7 +541,7 @@ media queries
   }
   #content1 #profile__detail {
     float: right;
-    margin: 0;
+    margin-top: 0;
     text-align: left;
   }
   #content1 #profile__detail p + p {
